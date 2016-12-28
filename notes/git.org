@@ -135,14 +135,15 @@ ell git to track one or more new files, or, add new changes for commit.
 
    - *Add new SSH key to Github*
      - Start ssh-agent 
-     #+BEGIN_SRC besh
-     eval "$(ssh-agent -s)"
-     #+END_SRC
+        #+BEGIN_SRC besh
+         eval "$(ssh-agent -s)"
+        #+END_SRC
      
      - Add SSH key to ssh-agent 
-     #+BEGIN_SRC bash
-     ssh-add~/.ssh/id_rsa
-     #+END+SRC
+       #+BEGIN_SRC bash
+        ssh-add~/.ssh/id_rsa
+       #+END_SRC
+
    - *Add new ssh key to github account*
     
      * copy SSH key to clipboard
