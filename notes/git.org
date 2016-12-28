@@ -151,10 +151,10 @@ ell git to track one or more new files, or, add new changes for commit.
       cat ~/.ssh/id_rsa.pub | pbcopy
       #+END_SRC
      
-       - In upper- right corner of Github page, click on propile photo, then click settings
-       - In "Personal setting  " sidebar, click "SSH and GPG keys"
-       - Click "New SSH key" or "Add ssh key"
-       - In "Title" field, add descriptive label
-       - In key field pste your key which we already copied from command
-       - Click add SSH key
-       - If prompted, confim GitHub password
+   - In upper- right corner of Github page, click on propile photo, then click settings
+   - In "Personal setting  " sidebar, click "SSH and GPG keys"
+   - Click "New SSH key" or "Add ssh key"
+   - In "Title" field, add descriptive label
+   - In key field pste your key which we already copied from command
+   - Click add SSH key
+   - If prompted, confim GitHub password
