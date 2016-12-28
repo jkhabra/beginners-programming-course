@@ -1,0 +1,17 @@
+* Lecture: 1
+
+  - what is computation
+
+    - To understand computation need to understand knowledge
+
+    - Divide knowledge into two types: /Declarative/, /Imperative/
+      - *Declarative*: is statement of facts
+      - *Imperative*: it is description how to do something 
+  
+  - How to think like a computer scientist
+    - Think program is like a recipe
+    - Apply computation in programming
+  
+  - Static semantics: which programs are meaningful
+  - Semantics: relating to meaning in language or logic
+  - Syntax: what are legal expressions in language
