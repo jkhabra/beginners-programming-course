@@ -1,0 +1,159 @@
+#+title:Git
+
+- Git is a distributed version control system
+
+- git store data like a set of snapshots of filesystem
+  + if files have not changed then git does not them store again 
+
+- Most operations in git only need local files and resources to operate 
+  + Project’s entire history is stored on local disk
+  + Hence most operations are done instantly 
+  + Git works fine when we are offline and we can commit until we get a network connection
+
+- We can not change the content of any file or directory without git knowing
+  + Git uses SHA-1 hash for checksumming, that has 40-hexadecimal character string
+  + Git stores everything in its database not by name but by hash value of its content
+
+- After committing into git, it is very difficult to lose or erase data
+
+- git has three main states where files can reside: /committed/ , /modified/ & /staged/
+  - *Committed* means that data is safely stored in your local database 
+  - *Modified* means that you have changed the file but have not committed to database yet 
+  - *Staged* means that marked a modified file in its current version to go into your next commit snapshot
+
+- There are main sections of a Git project:
+   - /Git directory(Repository)/: Where git stores the metadata and object database for project
+   - /working directory/: A single checkout of one version of the project
+   - /staging area/: A file, generally contained in your git directory, that stores information about what will go into your next commit
+      
+- Git workflow:
+  - Modify files in working directory
+  - Adding snapshots into staging area
+  - Do a commit, which stores the snapshot permanently to git directory
+
+* Common git commands
+
+
+ - *git config*
+
+   configure the author name & email to useed with your commits
+   
+   e.g 
+   #+begin_SRC bash
+   git config --global user.name "name"
+   git config --global user.email email@gmail.com
+   #+END_SRC
+
+ - *git init*
+
+   Initialise a new empty repository
+   
+ - *git status*
+
+   List the files you've changed and those you still need to add or commit
+
+ - *git add*
+
+   - T
+
+   See difference b/w files modified but not yet staged
+ell git to track one or more new files, or, add new changes for commit.
+   - Git will not start including new files in commits until explicitly told to do so
+   
+   e.g
+   #+BEGIN_SRC bash
+     git add .                       # Stages everything below presend working directory
+     git add "filename"              # add filename for next commit
+   #+END_SRC
+
+ - *git diff*
+
+   See difference b/w files modified but not yet staged
+
+ - *git commit*
+
+   Record the snapshot set up in your staging area.
+   Unstaged files are still in modified state (files are staged with /git add/ command).
+
+   - options
+     - *-m / --message*
+       Set the message of the commit. This is shown in result of *git log* command
+
+     - *-a*
+       Commit changes in all files which were previously added for earlier commits.
+
+   e.g
+   #+BEGIN_SRC bash
+     git commit -m "What I am committing"
+     git commit -am "What I did"         # commit any files you have added with git add, commit any files chages since then
+   #+END_SRC
+
+ - *git rm*
+ 
+   Remove file from working directory and stage this change
+
+ - *git push*
+
+   Send changes to the master branch of your remote repository
+   
+   #+BEGIN_SRC bash
+   git push origin master: uses the first time only
+   #+END_SRC
+
+ - *git clone*
+   
+   Create a local copy of a remote repository
+
+ - *git log*
+
+   See the history of repository with all commit messages
+   
+ - *git remote*
+
+   git-remote Manage set of tracked repositories
+
+   - Adding a remote to repository take two argument: /remort name/, /remort URL/
+
+     e.g
+     #+BEGIN_SRC bash
+     git remote add origin https://github.com/user/exp.git
+     git remote -v # verify new remote
+     #+END_SRC
+
+* Github 
+ 
+** Setting up SSH keys 
+  
+   - *Generate SSH key*
+     
+     #+BEGIN_SRC bash
+     ssh-keygen -t rsa -b 4096 -C "your email@example.com" " '-C' C is captil
+     #+END_SRC bash
+
+     - When prompted to "enter a file in which to save the key," press /Enter/
+     - when prompted to type a secure passphrase, press /Enter/ for igonring pass code
+
+   - *Add new SSH key to Github*
+     - Start ssh-agent 
+     #+BEGIN_SRC besh
+     eval "$(ssh-agent -s)"
+     #+END_SRC
+     
+     - Add SSH key to ssh-agent 
+     #+BEGIN_SRC bash
+     ssh-add~/.ssh/id_rsa
+     #+END+SRC
+   - *Add new ssh key to github account*
+    
+     * copy SSH key to clipboard
+      #+BEGIN_SRC bash
+      cat ~/.ssh/id_rsa.pub | pbcopy
+      #+END_SRC
+     
+       - In upper- right corner of Github page, click on propile photo, then click settings
+       - In "Personal setting  " sidebar, click "SSH and GPG keys"
+       - Click "New SSH key" or "Add ssh key"
+       - In "Title" field, add descriptive label
+       - In key field pste your key which we already copied from command
+       - Click add SSH key
+       - If prompted, confim GitHub password
