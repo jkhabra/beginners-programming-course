@@ -1,17 +1,135 @@
 * Lecture: 1
 
-  - what is computation
+** What we’ll learn by the end of the course
 
-    - To understand computation need to understand knowledge
+- Computational thinking
+  Write small pieces of code that do useful things
 
-    - Divide knowledge into two types: /Declarative/, /Imperative/
-      - *Declarative*: is statement of facts
-      - *Imperative*: it is description how to do something 
-  
-  - How to think like a computer scientist
-    - Think program is like a recipe
-    - Apply computation in programming
-  
-  - Static semantics: which programs are meaningful
-  - Semantics: relating to meaning in language or logic
-  - Syntax: what are legal expressions in language
+- Understand code written by others
+  It is super useful to read code written by others
+
+- Understand our abilities and limit
+  Take description of a problem, and convert it into a programming problem
+
+** Computation
+
+ - Declarative knowledge
+   - Tells you what something is, not how to do it
+   - Closest it gets is allow us to test it
+   e.g
+   #+BEGIN_EXAMPLE
+   \sqrt{x} is a number ~y~ s.t y^2 = x and y != 0
+   #+END_EXAMPLE
+
+  - Imperative knowledge
+   - Tells us how to do something
+   - A sequence of instructions to do something
+   e.g
+   #+BEGIN_EXAMPLE
+   - Start with a guess ~g~
+   - If g^2 = x, stop, return g
+   - else g = (g + x/g) / 2
+   - repeat
+   #+END_EXAMPLE
+
+  - *Computation* is about capturing the process of coming up with imperative process to do something
+  -  A computation is based on a fixed set of primitives which are used to create complex computation
+
+** Programming Language
+
+- There is no best programming-language, but some language are better at doing certain things than
+  other languages
+
+- Language used in this course Python, but the course is not about Python. It is about how to program,
+  Python is only a programming language choice and once we know how to code in one language, we can learn
+  a new language easily
+
+- Different dimensions of a languages
+  - High vs Low level
+    Low level: Very close to hardware. Primitives are moving data from one location in memory to high
+    level: Much richer set of primitives
+
+- General vs targeted
+  General:For general purpose programming. Can be used to do a lot of things e.g Python Targeted: Designed
+  for a specific purpose, e.g Math
+
+- Interpreted vs Compiled
+
+  Interpreted: Interpreter work directly on source-code at runtime Compiled: Compiler code to
+  intermediate from (Object code) which actually runs finally
+
+- Python is
+  - High level
+  - General Purpose
+  - Interpreted
+
+- *Static semantics*: which programs are meaningful
+
+- *Semantics*: relating to meaning in language or logic
+
+- *Syntax*: what are legal expressions in language
+
+
+* Lecture: 2
+
+  - Type Conversion: is convert data type
+    - e.g
+      #+BEGIN_SRC python
+      str(3) + 'bf'  # it prints 3bf
+      #+END_SRC
+
+  - Type Checking: Python checks the type of the operands before it applied things
+  - Type Checking fall on a specturm from wheak to strong typing
+
+** Operator Precedence
+   - Exponentiation are done before you do multiplication & divison done before you do addirion & subtraction
+   - If use /parentheses/ the culculation heppened in parentheses before the other operator
+     e.g
+     #+BEGIN_SRC python
+     print(3+4*5) # its gonna be 23
+     #+END_SRC
+     There is other version with *Parenthese*
+     #+BEGIN_SRC python
+     print((3+4) * 5) # it should be 35
+     #+END_SRC
+
+  - *Variables*: has own values
+    - They are in assignment statement
+    - /Nuance/ contain all possible values
+      e.g
+      #+BEGIN_SRC python
+      print(s = 3 + 5) # it create a link from that name to value
+      #+END_SRC
+    - In python variable type is dynamic
+      - Dynamic means it chnges depending on what the current value is
+    - Use variable any place where wanna use value
+    - Use variable name that make sense
+
+  - *Colon*: Identifying a block of code
+
+  - *Statements*: are legal commands that python can interpret such as print, assignment
+
+  -*Straight line program*: that is, a program in which execute in the sequence of the instruction one by one
+
+  - *Branching programs* is something that can change the order of instructions based on some test
+    - That tast is usally a value of a variable
+      e.g
+      #+BEGIN_SRC python
+      x = 15
+      if (x/2) * 2 == X:
+          print('Even')
+      else:
+          print('Odd')
+      #+END_SRC
+
+    - Indentation matters
+      e.g
+      #+BEGIN_SRC python
+      x = 'j'
+      if 'd' < x:
+        print('Hello')
+      print('nope') # if does the test
+      # but if statement isn't true and print has same indentation as the if so the secound print statement
+      #+END_SRC
+
+    - *Iteratiion or Loops*: If condition is true, do something, but keep doing it till it ends
