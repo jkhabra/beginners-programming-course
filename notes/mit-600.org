@@ -136,3 +136,84 @@
       #+END_SRC
 
     - *Iteratiion or Loops*: If condition is true, do something, but keep doing it till it ends
+
+
+* Lecture: 3
+
+**  Basic elements of programming
+
+- *Data* It is a collection information
+
+  - Such as int, string and boolean
+
+- *Operations*: It takes a data and create a new kind of data
+
+  - Such as addition, multiplication and boolean
+
+- *Commands*: gives an a authoritative order
+
+  - There are few command those we seen before assignment, input, condition, branches and loop
+
+
+** Good programming style
+
+ - Do comments in code to highlight what you are doing and it makes easy to debug
+
+ - Type Discipline: that you should check the types of operands before apply operator to them
+
+ - Variables Names: should tell what is that all about
+
+   - Choosing meaningful name for variable is very important
+
+ - /Testing/ all possible branches through a pieces of code
+
+   -  Make sure all inputs you an output
+
+ - *Iterative programs*: when a process or sequence is repeated in a program
+   - A common iterations are loop
+    e.g
+     #+BEGIN_SRC python
+     x = 16
+     ans = 0
+
+     while ans * ans <= x:
+       ans += 1
+
+     print ans
+     #+END_SRC
+
+   - *Defensive Programming*: is that should behave in a consistent even in the case of unexpected conditions
+     - if there is negative value or not a square number so we use defensive programming
+
+        e .g
+        #+BEGIN_SRC python
+        ans = 0
+        x = 16
+
+        if x >= 0:
+
+          while ans * ans < x:
+          ans = ans + 1
+
+          if ans * ans != x:
+            print x ' is not a perfect square'
+          else: print ans
+
+       else: print x 'is a negative number'
+        #+END_SRC
+
+ - Exhaustive enumeration: it means go through all possible values of some parameter
+   - Or in other words testing everything unit find right answer
+
+ - *For loop*: works on one elements at a time
+
+ - *Tuple*: is an ordered sequence of elements
+
+   - Tuple is immutable (it can not be changed)
+
+   - Its representation is following a parameters
+     #+BEGIN_EXAMPLE
+     yo = (1, 3, 6, 8)
+     #+END_EXAMPLE
+
+ - Index is starts from 0 in tuple, list, string and dictionary
