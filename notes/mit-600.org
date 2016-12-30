@@ -72,18 +72,24 @@
 
 * Lecture: 2
 
-  - Type Conversion: is convert data type
+- Two things needed to write programs:
+  - Representing data
+    - Value and Type
+
+  - Give instructions to manipulate that data
+    - Expressions: operands and operators
+
+  - Type Conversion: conversion of data types
     - e.g
       #+BEGIN_SRC python
       str(3) + 'bf'  # it prints 3bf
       #+END_SRC
 
-  - Type Checking: Python checks the type of the operands before it applied things
-  - Type Checking fall on a specturm from wheak to strong typing
+  - Type Checking: Python checks the type of the operands before it applies things
 
 ** Operator Precedence
    - Exponentiation are done before you do multiplication & divison done before you do addirion & subtraction
-   - If use /parentheses/ the culculation heppened in parentheses before the other operator
+   - If use /parentheses/ the calculation happened in parentheses before the other operator
      e.g
      #+BEGIN_SRC python
      print(3+4*5) # its gonna be 23
@@ -93,30 +99,29 @@
      print((3+4) * 5) # it should be 35
      #+END_SRC
 
-  - *Variables*: has own values
-    - They are in assignment statement
-    - /Nuance/ contain all possible values
+  - *Variables*: have own values
+    - They are created assignment statement
       e.g
       #+BEGIN_SRC python
       print(s = 3 + 5) # it create a link from that name to value
       #+END_SRC
     - In python variable type is dynamic
       - Dynamic means it chnges depending on what the current value is
-    - Use variable any place where wanna use value
-    - Use variable name that make sense
+    - Use variable any place where you want to use value
+    - Use variable names that make sense
 
-  - *Colon*: Identifying a block of code
+  - *Colon*: Identifies a block of code
 
   - *Statements*: are legal commands that python can interpret such as print, assignment
 
-  -*Straight line program*: that is, a program in which execute in the sequence of the instruction one by one
+  -*Straight line program*: It should be "program which executes in the sequence of instructions"
 
-  - *Branching programs* is something that can change the order of instructions based on some test
+  - *Branching programs* is program that can change the order of instructions based on some test
     - That tast is usally a value of a variable
       e.g
       #+BEGIN_SRC python
       x = 15
-      if (x/2) * 2 == X:
+      if (x/2) * 2 == x:
           print('Even')
       else:
           print('Odd')
@@ -127,9 +132,7 @@
       #+BEGIN_SRC python
       x = 'j'
       if 'd' < x:
-        print('Hello')
-      print('nope') # if does the test
-      # but if statement isn't true and print has same indentation as the if so the secound print statement
+      print('Hello') # it gives you a error because of indentation
       #+END_SRC
 
     - *Iteratiion or Loops*: If condition is true, do something, but keep doing it till it ends
