@@ -217,3 +217,55 @@
      #+END_EXAMPLE
 
  - Index is starts from 0 in tuple, list, string and dictionary
+
+* Lecture: 4
+
+ - *Decomposition*: it is a way of putting structure onto code
+   - Or in other words its a way of braking the code into modules
+     - Modules that can be reuse in multiple places
+
+ - *Abstraction*: means give names to things
+    So that the name captures the core of what a function or program does
+
+   - In abstraction you do not need to deal with a lot of details
+
+   - *Return*: A return statement returns a value to the calling function
+
+   - *Functions*: is capture a common pattern of computation
+
+     - It break up into modules
+
+     - Functions suppress the deatiles
+
+     - Function blocks begin with the keyword def followed by the function name and parentheses ( )
+
+     - Functions use local bindings means that function's code has no effect on outside's code
+
+     - Local bindings do not affect any global bindings
+       e.g
+       #+BEGIN_SRC python
+       def test_bindings():
+         x = 3 # x binds to test_binding
+
+         if x % 2 != 0:
+           return x
+       x = 8 # that is global binding. I has no effect on test_bindings's x
+       #+END_SRC
+
+     - *Doc string* it tell what that program does
+
+ - *Recursion*:  is a method of solving problems that involves breaking a problem down into smaller and smaller subproblems
+   - until you get to a small enough problem that it can be solved
+     e.g
+     #+BEGIN_SRC python
+       def recursion(s, indent):
+         print indent, 'recursion called with', s
+
+         if len(s) <=1:
+           print indent, 'About to return True from base case'
+           return True
+         else:
+           ans = s[0] == s[-1] and  recursion(s[1:-1], indent * indent)
+           print indent, 'About to return', ans
+           return ans
+     #+END_SRC
