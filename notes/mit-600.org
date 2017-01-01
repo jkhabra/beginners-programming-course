@@ -218,24 +218,28 @@
 
  - Index starts from 0 in tuple, list, string and dictionary
 
+
 * Lecture: 4
 
  - *Decomposition*: it is a way of putting structure onto code
    - Or in other words its a way of braking the code into modules
-     - Modules that can be reuse in multiple places
+     - Modules can be reuse in multiple places
 
  - *Abstraction*: means give names to things
     So that the name captures the core of what a function or program does
 
-   - In abstraction you do not need to deal with a lot of details
+   - In abstraction, we hide the details behind a name
 
-   - *Return*: A return statement returns a value to the calling function
+   - *Return*: A return statement returns a value to the caller of the function
 
-   - *Functions*: is capture a common pattern of computation
 
-     - It break up into modules
+   - *Function*: capture a common pattern of computation
 
-     - Functions suppress the deatiles
+     - It breaks the code up into modules
+
+     - Functions suppress the details
+
+     - return statement has no meaning outside the function
 
      - Function blocks begin with the keyword def followed by the function name and parentheses ( )
 
@@ -252,20 +256,19 @@
        x = 8 # that is global binding. I has no effect on test_bindings's x
        #+END_SRC
 
-     - *Doc string* it tell what that program does
+     - *Doc string* It tell what that function do
 
- - *Recursion*:  is a method of solving problems that involves breaking a problem down into smaller and smaller subproblems
-   - until you get to a small enough problem that it can be solved
-     e.g
-     #+BEGIN_SRC python
-       def recursion(s, indent):
-         print indent, 'recursion called with', s
+   - *Recursion*:  is a method of solving problems that involves breaking a problem down into smaller and smaller subproblems  until you get to a small enough problem that it can be solved
+       e.g
+       #+BEGIN_SRC python
+         def is_palindrome(s, indent):
+           print indent, 'Palindrome called with', s
 
-         if len(s) <=1:
-           print indent, 'About to return True from base case'
-           return True
-         else:
-           ans = s[0] == s[-1] and  recursion(s[1:-1], indent * indent)
-           print indent, 'About to return', ans
-           return ans
-     #+END_SRC
+           if len(s) <=1:
+             print indent, 'About to return True from base case'
+             return True
+           else:
+             ans = s[0] == s[-1] and is_palindrome(s[1:-1], indent * indent)
+             print indent, 'About to return', ans
+             return ans
+       #+END_SRC
