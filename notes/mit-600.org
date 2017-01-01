@@ -304,3 +304,61 @@
  - *Bi-section method* is the division of something into two equal parts
 
    - Then easily deterimne whether the answer lies to the left or the right
+
+
+* Lecture: 6
+
+- *Bisection method*  It related to binary search
+  - Bi-section is the division of something into two equal parts
+  - Then easily deterimne whether the answer lies to the left or the right
+  - It is ordered list means everything in left is smaller than right
+
+- *Assert*: testing helps find bugs more quickly and with less pain
+
+- *Regression testing*: is the process of testing changes to programs to make sure that the older programming still works with the new changes
+
+- *Non-scalar types*: /Tuples/, /string/ they are immutable
+
+- *Immutable types*: /Lists/, /Dictionary/
+
+  - The value of list is not just characters, it can be numbens, characters, string & other lists
+
+  - /Append/: It takes a list and adds elements in it
+
+  e.g
+  #+BEGIN_SRC python
+  Tech = ['mit', 'bla', 'tec']
+   b = ['b', 'dd', 's']
+   uni = []
+
+   uni.append(Tech) # it gonna print [['mit', 'bla', 'tec']]
+  #+END_SRC
+
+
+- *Regression testing*: is the process of testing changes to programs to make sure that the older programming still works with the new changes
+
+- *Non-scalar types*: /Tuples/, /string/ they are immutable
+
+- *Immutable types*: /Lists/, /Dictionary/
+
+  - The value of list is not just characters, it can be numbens, characters, string & other lists
+
+  - /Append/: It takes a list and adds elements in it
+
+  e.g
+  #+BEGIN_SRC python
+  Tech = ['mit', 'bla', 'tec']
+   b = ['b', 'dd', 's']
+   uni = []
+
+   uni.append(Tech) # it gonna print [['mit', 'bla', 'tec']]
+  #+END_SRC
+
+  - Removing is easy in lists
+    e.g
+    #+BEGIN_SRC python
+    rm = [1, 'ee', 33, 'yo']
+
+    rm.remove('ee') # it gonna print something like that [1, 33, 'yo']
+
+    #+END_SRC
