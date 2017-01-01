@@ -272,3 +272,35 @@
              print indent, 'About to return', ans
              return ans
        #+END_SRC
+
+
+* Lecture: 5
+
+ - *Arbitrary precision integers*: are large numbers
+   - You can make numbers as big as you want them to
+     e.g
+     #+BEGIN_SRC python
+     a = 2 ** 1000
+     print a # it gonna print really really big numben
+     #+END_SRC
+
+ - *Float*: Programming languages represent what we think as real numbers
+
+   - Float is short for floating piont
+   - All programming languages represent numbers using the i triple e floating point
+     - It stands for IEEE 754 floating piont
+     - it is a variant of scientific notation
+     - It represent very large numbens
+   - We represent the numbens in the form of a mantissa and exponent
+   - Represent a floating point number as a pair of a mantissa and an exponent
+   - Newer use double equals to compare ploatig point
+
+ - Integers can not enumerate all gueses
+
+   - Because the reals are uncountables
+
+ - *Successive Approximation*: is a method that tells each guess is better than the  previous guess
+
+ - *Bi-section method* is the division of something into two equal parts
+
+   - Then easily deterimne whether the answer lies to the left or the right
