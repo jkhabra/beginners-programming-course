@@ -362,3 +362,40 @@
     rm.remove('ee') # it gonna print something like that [1, 33, 'yo']
 
     #+END_SRC
+
+
+* Lecture: 7
+
+-*List*: is a sequence of objects
+  - Lists are mutable
+  - Lists can be heterogeneous it means that the elements can be multiple different types
+  - List assignment: When multiple lists bound to same objects if you change one of them other one gonna change automatically
+    - Assignment has two separate path to the same object
+      e.g
+      #+BEGIN_SRC python
+      l1 = [1, 2, 3]
+      l2 = l1
+      print l2 # [1, 2, 3]
+
+      l1[0] = 8
+      print l2 # i gonna print [8, 2, 3]
+      #+END_SRC
+
+-*Dictionaries*: has a key value pair
+  - Dictionaries are mutable like lists
+  - They are heterogeneous but unlike lists they are not ordered
+  - Keys are used as the indices
+  - Dictionaries use hashing technique
+  - Hashing allow us to retrieve keys in constant time
+
+  - *Pseudo code*: is description of steps, to do a particular thing
+
+    - It gives information what we need in our code
+
+    - Flow of control the oder which thins are going to happen
+
+    - Use abstraction to suppress some details
+
+    - Debugging is easy with pseudo code
+
+      - How it is a lot easier to modify the pseudo code as compared to real code
