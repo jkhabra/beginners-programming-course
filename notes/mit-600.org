@@ -308,7 +308,7 @@
 
 * Lecture: 6
 
-- *Bisection method*  It related to binary search
+- *Bisection method*  It is related to binary search
   - Bi-section is the division of something into two equal parts
   - Then easily deterimne whether the answer lies to the left or the right
   - It is ordered list means everything in left is smaller than right
