@@ -428,3 +428,44 @@ f(x) eO(n)**2 # n measure the size of x
     - Because doing one set of things & doing it some other number of times
 
   - Algorithms speeds depends on input
+
+* Lecture: 9
+
+ -*Selection Sort*: is walking along the list, looking for the smallest thing in the back end of the list
+   - Keeping track of where it came from & swapping it with that spot in the list
+    e.g
+    #+BEGIN_EXAMPLE
+    l = [2, 5, 6, 3, 4]
+    # after selection sort. The smallest elements at the frint
+    l = [2, 3, 4, 5, 6] # it gonna look like this
+    #+END_EXAMPLE
+
+ -*Prefix*: Prefix is sorted lists
+
+ -*Suffix*: Suffix is not sorted lists
+
+ -*Loop Invariant*: means that there is a property that is true of this structure every time through the loop
+   - Loops starts off with the prefix being nothing
+   - It keep increasing the size of the prefix by 1 unit it gets through the entire list
+   - At which point there's nothing in the suffix and entire prefix is sorted
+   - This process goes through the entire list, even if list is sorted before gets part way through
+
+   - *Bubble sort*: compares all the element one by one and sort them based on their values
+
+     - Because with each iteration the smaller element in the list bubbles up towards the first
+
+       e.g
+       #+BEGIN_SRC python
+       def bubble_sort(ls):
+
+         for j in range(len(l)):
+
+            for i in range (len(ls -1)):
+
+              if ls[i] > ls[i + 1]:
+                temp = ls[i]
+                ls[i] = ls[i+1]
+                ls[i+1] = temp
+            print ls
+       #+END_SRC
+     - This is quadratic algorithm
