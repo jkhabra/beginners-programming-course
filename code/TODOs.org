@@ -1,0 +1,106 @@
+* DONE Recursion
+CLOSED: [2017-01-02 Mon 13:23]
+** DONE Length
+CLOSED: [2017-01-03 Tue 09:54]
+- Base Case
+  - List is empty
+    #+BEGIN_SRC python
+    ls == []
+    #+END_SRC
+- Recursion Case
+  1 + length(list with one item less)
+  #+BEGIN_SRC
+  1 + length(ls[1:])
+  #+END_SRC
+
+** DONE total
+CLOSED: [2017-01-03 Tue 09:54]
+- Base Case
+  - List is empty
+    #+BEGIN_SRC python
+    ls == []
+    #+END_SRC
+- Recursion Case
+
+** DONE Factorial
+CLOSED: [2017-01-05 Thu 13:58]
+- Base case
+  #+BEGIN_SRC python
+  if input <= 1:
+    return 1
+  #+END_SRC
+- Recursion case
+  #+BEGIN_SRC python
+  return input * func(input - 1)
+  #+END_SRC
+
+** DONE Palindrome
+CLOSED: [2017-01-05 Thu 13:58]
+- Base case
+  #+BEGIN_SRC python
+  if len(s) <= 1:
+    return True
+  #+END_SRC
+- Recursion case
+  #+BEGIN_SRC python
+  return s[0] == s[-1] and fuc(s[1:-1])
+  #+END_SRC
+
+** DONE Binary Search
+CLOSED: [2017-01-05 Thu 13:58]
+- Base case
+ #+BEGIN_SRC python
+  if len(ls) < 1:
+    return False
+ #+END_SRC
+- Recursion case
+  - Find middle index
+  - check middle item
+    - if equal, return True
+    - if less, repeat on list[middle index:] (i.e right side of list)
+    - else, repeat on left of middle
+
+* Algorithms
+
+** Selection Sort
+
+*** Algorithm
+- This algorithm first finds the smallest element in the list
+- Then swap it with the element in the first position
+- Then find the second smallest element and exchange it with the second element
+- This process goes on until the entire list is sorted
+
+*** Pseudo code
+- Base case
+  #+BEGIN_SRC python
+  if len(ls) <= 1:
+   return ls
+  #+END_SRC
+- Recursive case
+  - First find the smallest element from the list
+    #+BEGIN_SRC python
+    min_index = ls.index(min(ls))
+    #+END_SRC
+  - Swap min element with element at first position
+    #+BEGIN_SRC python
+    ls[0],ls[min_index] = ls[min_index],ls[0]
+    #+END_SRC
+  - Do same with list without its first element
+    #+BEGIN_SRC python
+    return [ls[0]] + selection_sort(ls[1:])
+    #+END_SRC
+** Bubble Sort
+
+*** Algorithm
+- Start by compairing first two elements
+- If the first element is greater than second then, swap the elements
+- If the first element is smaller than second, leave the elements as it is
+- This process goes on until first and last element of the list is compared
+- If there are n elements to be sorted then, the process is repeated n-1 times
+
+*** Pseudo code
+- for i in range(n):
+  - for i in range(n):
+    - if ls[i] > ls[i + 1]
+      - ls[i], ls[i+1] = ls[i+1], ls[i]
+- return ls
