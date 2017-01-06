@@ -1,3 +1,6 @@
+from math import log10
+
+
 def is_prime(num):
     for i in range(2, num):
         if num % i == 0:
@@ -14,3 +17,16 @@ def get_primes(numbers):
             primes.append(i)
 
     return primes
+
+
+def prime_log_sum(num):
+    sum_of_log = 0
+
+    if num == 0:
+        return ()
+
+    for i in get_primes(num):
+        sum_of_log += log10(i)
+        ratio = sum_of_log / num
+
+    return (sum_of_log, num, ratio)

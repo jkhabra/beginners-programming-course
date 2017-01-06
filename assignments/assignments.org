@@ -1,0 +1,9 @@
+
+* Assignment 1
+
+** Problem 2
+
+ - Find sum of logs of prime numbers b/w 1 and number ~n~
+   and save it in ~prime_logs_sum~
+ - Then find the logs of the ~n~
+ - After that find the ratio of ~prime_logs_sum~ and ~n~
