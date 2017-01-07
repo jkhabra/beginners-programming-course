@@ -319,27 +319,7 @@
 
 - *Non-scalar types*: /Tuples/, /string/ they are immutable
 
-- *Immutable types*: /Lists/, /Dictionary/
-
-  - The value of list is not just characters, it can be numbens, characters, string & other lists
-
-  - /Append/: It takes a list and adds elements in it
-
-  e.g
-  #+BEGIN_SRC python
-  Tech = ['mit', 'bla', 'tec']
-   b = ['b', 'dd', 's']
-   uni = []
-
-   uni.append(Tech) # it gonna print [['mit', 'bla', 'tec']]
-  #+END_SRC
-
-
-- *Regression testing*: is the process of testing changes to programs to make sure that the older programming still works with the new changes
-
-- *Non-scalar types*: /Tuples/, /string/ they are immutable
-
-- *Immutable types*: /Lists/, /Dictionary/
+- *Mutable types*: /Lists/, /Dictionary/
 
   - The value of list is not just characters, it can be numbens, characters, string & other lists
 
@@ -428,6 +408,7 @@ f(x) eO(n)**2 # n measure the size of x
     - Because doing one set of things & doing it some other number of times
 
   - Algorithms speeds depends on input
+
 
 * Lecture: 9
 
