@@ -7,3 +7,34 @@
    and save it in ~prime_logs_sum~
  - Then find the logs of the ~n~
  - After that find the ratio of ~prime_logs_sum~ and ~n~
+
+* Assignment 2
+
+** Problem 3
+- *_is_possible (num : integer)*
+  - Returns True if it is possible to make a combination of
+    6, 9, 20 which is equal to ~num~
+
+  - To achieve that use loop inside loop
+    #+BEGIN_SRC python
+     for x in range(0, num):
+       for y in range(0, num):
+         for z in range(0, num):
+           if (6x + 9y + 20z) == num:
+             return True
+     return False
+    #+END_SRC
+
+- *max_impossible (num : integer)*
+
+  - Return the biggest number that can't be make a combination of 6, 7, 8
+
+  - IF is_possible return True 5 time constantly
+
+    - Then we need to find last False number
+
+      - To achieve that we need two variables count that contain how many times num is True
+
+      - max_num that would contain false numbers
+
+      - Then use for loop to do other stuff
