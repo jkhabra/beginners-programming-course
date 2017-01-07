@@ -383,8 +383,7 @@
 
 * Lecture: 8
 
-- *Efficiency*: Time refers as this as orders of growth
-  - Efficiency is really about choice of algorithm
+- *Efficiency*: Time refers as the orders of growth
   - In efficiency there's two things we want to measure /space/ & /time/
   - *Space* is refers to how much computer memory does it take to complete a computation of a particular size
   - *Time*: is refers to how long does the algorithm implemented by program take to run
