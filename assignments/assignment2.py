@@ -9,11 +9,13 @@ def is_possible(num, a=6, b=9, c=20):
     return False
 
 
-def max_impossible(num):
+def max_impossible(number):
+    """Return the biggest ~number~ that can't be make a combination of 6, 7, 8
+       """
     count = 0
     max_num = 0
 
-    for i in range(num):
+    for i in range(number):
         if is_possible(i):
             count += 1
         else:
