@@ -346,7 +346,7 @@
 
 * Lecture: 7
 
--*List*: is a sequence of objects
+- *List*: is a sequence of objects
   - Lists are mutable
   - Lists can be heterogeneous it means that the elements can be multiple different types
   - List assignment: When multiple lists bound to same objects if you change one of them other one gonna change automatically
@@ -361,7 +361,7 @@
       print l2 # i gonna print [8, 2, 3]
       #+END_SRC
 
--*Dictionaries*: has a key value pair
+- *Dictionaries*: has a key value pair
   - Dictionaries are mutable like lists
   - They are heterogeneous but unlike lists they are not ordered
   - Keys are used as the indices
@@ -411,41 +411,61 @@ f(x) eO(n)**2 # n measure the size of x
 
 * Lecture: 9
 
- -*Selection Sort*: is walking along the list, looking for the smallest thing in the back end of the list
-   - Keeping track of where it came from & swapping it with that spot in the list
-    e.g
-    #+BEGIN_EXAMPLE
-    l = [2, 5, 6, 3, 4]
-    # after selection sort. The smallest elements at the frint
-    l = [2, 3, 4, 5, 6] # it gonna look like this
-    #+END_EXAMPLE
+ - *Selection Sort*
 
- -*Prefix*: Prefix is sorted lists
+   - This algorithm first finds the smallest element in the list
 
- -*Suffix*: Suffix is not sorted lists
+   - Then swap it with the element in the first position
 
- -*Loop Invariant*: means that there is a property that is true of this structure every time through the loop
+   - Then find the second smallest element and exchange it with the second element
+
+   - This process goes on until the entire list is sorted
+
+   - *Pseudo code*
+     - Base case
+     #+BEGIN_SRC python
+     if len(ls) <= 1:
+      return ls
+     #+END_SRC
+    - Recursive case
+      - First find the smallest element from the list
+      #+BEGIN_SRC python
+      min_index = ls.index(min(ls))
+      #+END_SRC
+    - Swap min element with element at first position
+      #+BEGIN_SRC python
+      ls[0],ls[min_index] = ls[min_index],ls[0]
+      #+END_SRC
+    - Do same with list without its first element
+      #+BEGIN_SRC python
+       return [ls[0]] + selection_sort(ls[1:])
+    #+END_SRC
+
+ - *Loop Invariant*: means that there is a property that is true of this structure every time through the loop
    - Loops starts off with the prefix being nothing
    - It keep increasing the size of the prefix by 1 unit it gets through the entire list
    - At which point there's nothing in the suffix and entire prefix is sorted
    - This process goes through the entire list, even if list is sorted before gets part way through
 
-   - *Bubble sort*: compares all the element one by one and sort them based on their values
+ - *Bubble sort*
 
-     - Because with each iteration the smaller element in the list bubbles up towards the first
+   - Start by compairing first two elements
 
-       e.g
-       #+BEGIN_SRC python
-       def bubble_sort(ls):
+   - If the first element is greater than second then, swap the elements
 
-         for j in range(len(l)):
+   - If the first element is smaller than second, leave the elements as it is
 
-            for i in range (len(ls -1)):
+   - This process goes on until first and last element of the list is compared
 
-              if ls[i] > ls[i + 1]:
-                temp = ls[i]
-                ls[i] = ls[i+1]
-                ls[i+1] = temp
-            print ls
-       #+END_SRC
-     - This is quadratic algorithm
+   - If there are n elements to be sorted then, the process is repeated n-1 times
+
+   - Because with each iteration the smaller element in the list bubbles up towards the first
+
+   - *Pseudo code*
+     #+BEGIN_SRC python
+      for i in range(n):
+        for i in range(n):
+          if ls[i] > ls[i + 1]
+            ls[i], ls[i+1] = ls[i+1], ls[i]
+        return ls
+     #+END_SRC
