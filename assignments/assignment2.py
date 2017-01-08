@@ -9,18 +9,21 @@ def is_possible(num, a=6, b=9, c=20):
     return False
 
 
-def max_impossible(number):
-    """Return the biggest ~number~ that can't be make a combination of 6, 7, 8
-       """
+def max_impossible(a=6, b=9, c=20):
+    """Return the biggest number that can't be made with the combination
+       of a, b, c"""
     count = 0
-    max_num = 0
+    not_possible = 1
+    max_impossible = not_possible
 
-    for i in range(number):
-        if is_possible(i):
+    while True:
+        if is_possible(not_possible, a, b, c):
             count += 1
         else:
             count = 0
-            max_num = i
+            max_impossible = not_possible
 
         if count == 6:
-            return max_num
+            return max_impossible
+
+        not_possible += 1
