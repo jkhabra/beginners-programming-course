@@ -8,6 +8,7 @@
  - Then find the logs of the ~n~
  - After that find the ratio of ~prime_logs_sum~ and ~n~
 
+
 * Assignment 2
 
 ** Problem 3
@@ -38,3 +39,35 @@
       - max_num that would contain false numbers
 
       - Then use for loop to do other stuff
+
+
+* Assignment 3:
+
+** Problem 1 a
+- Use loop to check how many times key appears in target
+  - Find the index of key in target
+    - Add 1 into count when key found in target
+  - Break loop when -1 appears
+    - Return count
+
+** Problem 2 b
+- Base case
+  - String is empty
+    #+BEGIN_SRC python
+    index = target.find(key)
+    if index == -1:
+      return 0
+    #+END_SRC
+- Recursion case
+  - Return 1 + countSubStringMatchRecursive(target[len(key):])
+    #+BEGIN_SRC python
+    return 1 + countSubStringMatchRecursive(target[len(key):])
+    #+END_SRC
+
+** Problem 4
+- *subStringMatchExactlyOneSub (target :string, key :string)*
+
+  Find all matches of key with exactly *one* substitution
+
+  - Remove exact matches from result
+    - return them
