@@ -469,3 +469,69 @@ f(x) eO(n)**2 # n measure the size of x
             ls[i], ls[i+1] = ls[i+1], ls[i]
         return ls
      #+END_SRC
+
+* Lecture: 10
+
+- *Search*: To look for specific data in a file
+  - A search implies either scanning content sequentially or using algorithms to compare multiple indexes to find a
+
+- *Amortization*: is an accounting term that refers to the process of allocating the cost of an intangible asset over a period of time
+
+  - It also refers to the repayment of loan principal over time
+
+- *Merge Sort*: It was invented in 1945 by 'John Von Neumann'
+
+  - Merge sort uses the idea of divide and conquer
+
+  - It divide the list in half
+
+  - It keep dividing lists in half until that the only singletons left
+
+  - After that it combine or merge the list
+
+  - Algorithms for Merge sort
+    #+BEGIN_SRC python
+    def merge(left, right):
+       result = []
+       i,j = 0, 0
+
+       while i < len(left) and j < len(right):
+
+            if left[i] <= right[j]:
+               result.append(left[i])
+               i += 1
+           else:
+               result.append(right[j])
+               j += 1
+       while (i < len(left)):
+             result.append(left[i])
+             i += 1
+       while (j < len(right)):
+             result.append(right[j])
+             j += 1
+       return result
+    #+END_SRC
+
+    #+BEGIN_SRC python
+    def merge_sort(l):
+      if len(l) < 2:
+        return l[:]
+
+      else:
+        middle = len(l) / 2
+        left = merge_sort(l[:middle])
+        right = merge_sort(l[middle:])
+        together = merge(left, right)
+        return together
+    #+END_SRC
+  - Complexity of merge sort is n log n
+
+- *Hashing*: is mapping any kind of data into integers
+
+  - This is constant algorithm
+
+  - It takes too much space in complex cases such as finger prints
+
+  - They are really hard to create
+
+- *Exceptions*:  handle expected errors
