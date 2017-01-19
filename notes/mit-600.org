@@ -470,6 +470,7 @@ f(x) eO(n)**2 # n measure the size of x
         return ls
      #+END_SRC
 
+
 * Lecture: 10
 
 - *Search*: To look for specific data in a file
@@ -535,3 +536,57 @@ f(x) eO(n)**2 # n measure the size of x
   - They are really hard to create
 
 - *Exceptions*:  handle expected errors
+
+* Lecture: 11
+
+- *Testing*: we run our program on some set of inputs and check the answer and say that's what we expected
+
+  - In testing we compare an input output pair to a specification
+
+  - There are two classes of testing /unit testing/ and /integration testing/
+
+  - *Unit testing*: that validate each piece of the program independently
+
+    - It tests individual functions
+
+  - *Integration testing*: is the phase in which tested as a group
+
+    - It occurs after unit testing and before validation testing
+
+  - *Test Suite*: is small enough so that we can test it in a reasonable amount of time
+
+    - But also large enough to give us some confidence
+
+
+- *Reasoning*: is about an appropriate set of inputs to test it on it
+
+
+- *Validation*: is a process designed to uncover problems
+
+  - It increase confidence that our program does what we think it's intended to do
+
+  - It's typically a combination of two things /Testing/ and /reasoning/
+
+- *Debugging*: is process of ascertaining why the program is not working
+
+  - Why it's failing to working properly
+
+  - We study the events that led to an error
+
+  - The goal of debugging is not eliminate one bug it should be to move towards a bug free program
+
+  - The two best debugging tools are /print statement/ and /reading/
+
+  - Debugging is simply a search process
+
+  - When you debugging you should be systematic
+
+  - /Systematic/ is when you looking for bug and find bug, then reducing the search time
+
+  - *Scientific method*: is you start by studying the available data
+
+  - /Performance debugging/: it tells why program is slow
+
+  - /Defensive programming/: it will facilitate both validation and debugging
+
+    - In defensive programming we use assert statement so that we catch problems early
