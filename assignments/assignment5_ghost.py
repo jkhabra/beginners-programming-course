@@ -19,20 +19,6 @@ def load_words():
     return wordlist
 
 
-def get_frequency_dict(sequence):
-    """
-    Returns a dictionary where the keys are elements of the sequence
-    and the values are integer counts, for the number of times that
-    an element is repeated in the sequence.
-    """
-    freq = {}
-
-    for x in sequence:
-        freq[x] = freq.get(x, 0) + 1
-
-    return freq
-
-
 wordlist = load_words()
 
 
