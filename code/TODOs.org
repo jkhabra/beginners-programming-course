@@ -63,7 +63,6 @@ CLOSED: [2017-01-05 Thu 13:58]
 * Algorithms
 
 ** Selection Sort
-
 *** Algorithm
 - This algorithm first finds the smallest element in the list
 - Then swap it with the element in the first position
