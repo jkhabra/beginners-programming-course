@@ -1,0 +1,8 @@
+* Assignment6
+** Problem3
+- *pick_best_word (hand :Dictionary, points_dict :Dictionary)*
+  Returns the highest scoring word from ~points_dict~ that can be made with the ~hand~ or return '.' if no words can be made with the given ~hand~
+  - [X] Convert ~hand~ into string and save it in ~hand_str~
+  - [X] for every combination of ~hand_str~
+    - [X] add valid combination to ~valid_words~
+  - [X] get highest scoring word from ~valid_words~
