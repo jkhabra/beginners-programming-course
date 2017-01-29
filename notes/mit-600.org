@@ -497,19 +497,21 @@ f(x) eO(n)**2 # n measure the size of x
        i,j = 0, 0
 
        while i < len(left) and j < len(right):
-
             if left[i] <= right[j]:
                result.append(left[i])
                i += 1
            else:
                result.append(right[j])
                j += 1
+
        while (i < len(left)):
              result.append(left[i])
              i += 1
+
        while (j < len(right)):
              result.append(right[j])
              j += 1
+
        return result
     #+END_SRC
 
@@ -517,7 +519,6 @@ f(x) eO(n)**2 # n measure the size of x
     def merge_sort(l):
       if len(l) < 2:
         return l[:]
-
       else:
         middle = len(l) / 2
         left = merge_sort(l[:middle])
@@ -592,6 +593,7 @@ f(x) eO(n)**2 # n measure the size of x
 
     - In defensive programming we use assert statement so that we catch problems early
 
+
 * Lecture: 12
 
 - *Optimization Problems*: is the problem of finding the best solution from all feasible solutions
@@ -629,3 +631,21 @@ f(x) eO(n)**2 # n measure the size of x
   - Solving each of those subproblems just once, and storing their solutions – ideally, using a memory-based data structure
 
   - The next time the same subproblem occurs, instead of recomputing its solution, one simply looks up the previously computed solution, thereby saving computation time at the expense of a  modest expenditure in storage space
+
+* Lecture: 13
+
+  - *Memorization*: an optimization technique where you cache previously computed results
+
+    - Return the cached result when the same computation is needed again
+
+  - *Optimization problems*: There are two things to look for first overlapping sub-problems
+
+    - Other one was optimal substructure
+
+    - The notion is that you can get a globally optimal solutions to sub-problems
+
+    - But this is not true to all problems
+
+  - *Decision Tree*: is a decision uses a tree-like graph and their possible consequences, including chance event outcomes, resource costs, and utility
+
+    - It is one way to display an algorithm
