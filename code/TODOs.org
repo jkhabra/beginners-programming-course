@@ -102,4 +102,15 @@ CLOSED: [2017-01-05 Thu 13:58]
   - for i in range(n):
     - if ls[i] > ls[i + 1]
       - ls[i], ls[i+1] = ls[i+1], ls[i]
-- return ls
+- return
+
+** Merge sort
+
+*** Algorithm
+- Merge sort is continually splits a list in half
+- If the list is empty or has one item, then it is sorted
+- Then use merge process that taking two smaller sorted lists
+  - Combining them together into a single, sorted, new list
+-
+
+*** Pseudo code
