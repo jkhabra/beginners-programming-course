@@ -41,7 +41,7 @@
       - Then use for loop to do other stuff
 
 
-* Assignment 3:
+* assignment 3:
 
 ** Problem 1 a
 - Use loop to check how many times key appears in target
@@ -71,3 +71,42 @@
 
   - Remove exact matches from result
     - return them
+
+* Assignment 8:
+
+** Problem 2
+- =greedyAdvisor (subjects: dictionary, maxWork: int, comparator: function)=
+
+#+BEGIN_SRC python
+best_subjects = {}
+total_best_work = 0
+#+END_SRC
+
+- while  total_best_work < max_work
+  - Find the best subject from subject dictionary
+    #+BEGIN_SRC python
+    best_sub = None
+    for sub in subject.keys():
+      if sub in best_subjects:
+        continue
+
+      if not best_sub:
+        best_sub = sub
+
+      if comparator(sub, best_sub):
+        if total_best_work + subjects.get(sub)[WORK] > max_work:
+          continue
+
+        best_sub = sub
+    #+END_SRC
+
+
+  - Store in best_subject dictionary
+    #+BEGIN_SRC python
+    best_subjects[best_sub] = (subjects.get(best_sub)[VALUE], best_sub.work)
+    #+END_SRC
+
+  - update total_best_work
+    #+BEGIN_SRC python
+    total_best_work += best_sub.work
+    #+END_SRC
