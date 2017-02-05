@@ -634,7 +634,7 @@ f(x) eO(n)**2 # n measure the size of x
 
 * Lecture: 13
 
-  - *Memorization*: an optimization technique where you cache previously computed results
+  - *Memoization*: an optimization technique where you cache previously computed results
 
     - Return the cached result when the same computation is needed again
 
@@ -649,3 +649,34 @@ f(x) eO(n)**2 # n measure the size of x
   - *Decision Tree*: is a decision uses a tree-like graph and their possible consequences, including chance event outcomes, resource costs, and utility
 
     - It is one way to display an algorithm
+
+* Lecture: 14
+- In dynamic programming we trade time for space
+
+- At any problem that seems to have a natural recursive solution, think about where it can attack to dynamic programming
+
+- If you got optimal substructure, and overlapping subproblems then dynamic programming can be used
+
+- *Pseudo polynomial algorithm*: is an algorithm that's polynomial the size of the inputs
+
+- /Numeric value/ that's exponential number in the number of digits
+
+- *Module*: as a collection of related functions
+
+  - Functions are refer to the using dot notation
+
+  - Dot notation uses to avoid name conflicts
+
+- *Classes*: In object-oriented programming, a class is an extensible program code template for creating objects
+
+  - A class is a collection of objects with characteristics in common
+
+- *Object*: An object is a collection of data and functions
+
+- *Encapsulation* is used to refer to one of two related but distinct notions, and sometimes to the combination
+
+  - This combination of data and functions on that data is a very essence of objects oriented programming
+
+- *Message passing metaphor* is about that one object can pass message to another object
+
+  - The receiving object respond by executing one of its methods on the object
