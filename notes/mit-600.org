@@ -680,3 +680,41 @@ f(x) eO(n)**2 # n measure the size of x
 - *Message passing metaphor* is about that one object can pass message to another object
 
   - The receiving object respond by executing one of its methods on the object
+
+* Lecture: 15
+
+- *Class*: is a template for creating instance of an object
+
+  - *Initializer or __init__*: is run as soon as an object of a class is instantiated
+
+    - init creates a pointer to the instance
+
+  - *Self*: signifies an instance of a class
+
+    - Whenever a new instance of a class is created, "self" indicates that it will have its own variables that aren't shared with other instances
+
+    - Self will always point to particular instance
+
+    - self is a conventional name, it could be any name
+
+  - *Methods*: can access the value of the specific instance
+
+  - *__str__*: print statement to compute the "informal" string representation of an object
+
+  - *__cmp__*: uses for comparing values
+
+  - *Operator overloading*: that allows same operator to have different meaning according to the context
+
+  - /dir/ returns a list of all the methods that are associated with in class
+
+    - Those could be created by you and those are know as fields
+
+    - Both methods and fields altogether called attributes of the instance
+
+- *Shallow equality*: two things (objects) point to exactly the same referent in memory
+
+- *Deep equality*: is if the values are equivalent
+
+  - It supports both primitive values and objects
+
+  - Strict equals ( === ) means the values are equivalent
