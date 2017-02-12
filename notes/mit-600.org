@@ -697,7 +697,15 @@ f(x) eO(n)**2 # n measure the size of x
 
     - self is a conventional name, it could be any name
 
-  - *Methods*: can access the value of the specific instance
+  - *Methods*: A method is a function that takes a class instance as its first parameter
+
+    - Methods are members of classes
+
+    - Methods can access the value of the specific instance
+
+  - *Magic Methods or Special methods*: They're mostly used for code that gets called implicitly when special syntax is used
+
+    - Operator overloading is also done with magic methods (e.g. __le__)
 
   - *__str__*: print statement to compute the "informal" string representation of an object
 
