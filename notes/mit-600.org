@@ -718,3 +718,75 @@ f(x) eO(n)**2 # n measure the size of x
   - It supports both primitive values and objects
 
   - Strict equals ( === ) means the values are equivalent
+
+* Lecture: 16
+
+ - *Data Hiding*: is used to hide internal object details
+
+   - Data hiding ensures exclusive data access to class members
+
+   - It protects object integrity by preventing unintended or intended changes
+
+   - Python does not enforce data hiding
+
+ - *__init__*: is run as soon as an object of a class is instantiated
+
+   - init creates a pointer to the instance
+
+ - *__cmp__*: is comparison method
+
+   - It compare two instances of an object
+
+   - It returns three values
+
+     - A negative number if x is less than y
+
+     - Zero if x is equal to y
+
+     - A positive number if x is greater than y
+
+   - The built-in cmp() function will typically return only the values -1, 0, or 1
+
+ - *__str__*: is print statement to compute the "informal" string representation of an object
+
+ - *Inheritance*: A class can inherit attributes and behavior methods from another class, called the superclass
+
+   - A class which inherits from a superclass is called a subclass
+
+   - Actions on the child imply an action on the parent
+
+   - Actions on the child override the action on the parent
+
+   - Actions on the child alter the action on the parent
+
+ - *Shadowing*: occurs when a variable declared within a certain scope (method, or inner class) has the same name as a variable declared in an outer scope
+
+   - At the level of identifiers this is known as name masking
+
+   - The outer variable is said to be shadowed by the inner variable, while the inner identifier is said to mask the outer identifier
+     e.g
+     #+BEGIN_SRC python
+     x = 0
+
+     def outer():
+       x = 1
+
+     def inner():
+        x = 2
+        print("inner:", x)
+
+     inner()
+     print("outer:", x)
+
+     outer()
+     print("global:", x)
+
+     # prints
+     # inner: 2
+     # outer: 1
+     # global: 0
+
+     #+END_SRC
+ - *iter and next*: iter creates method that's going to give you a pointer to the place in the structure
+
+   -/ next/ literally goes along the structure giving you the next element
