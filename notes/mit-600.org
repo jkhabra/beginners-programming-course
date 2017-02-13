@@ -817,10 +817,60 @@ f(x) eO(n)**2 # n measure the size of x
 
   - That is, a space with a metric used to compute distance
 
-- *Pylab*:
+ - *Pylab*: is built on package its either pronounced num p or num pi
+
+  - It gives us a lot of operations on numbers
+
+  - Pylab which is designed to provide a python interface to a lot of the functionality you get in Matlab
 
 - *Default values* If call a method without that last arrangement rather than getting an error message
 
   - It chooses the default value
 
   - All built-in types have default values
+
+* Lecture: 18
+
+  - Always ask yourself if the answer makes sense
+
+    - Ask is it consistent with other evidence
+
+  - Systematic about debugging
+
+    - Debug with a simple example
+
+  - *Brownian motion*: the erratic random movement of microscopic particles in a fluid
+
+    - As a result of continuous bombardment from molecules of the surrounding medium
+
+    - *Model evaluation*: The simplest way to generate a callable object for scoring is by using make_scorer
+
+      - That function converts metrics into callables that can be used for model evaluation
+
+    - *Pylab* which is designed to provide a python interface to a lot of the functionality you get in Matlab
+
+      - /Show/: Pylab produces plots, and then does not display them until type show
+
+        - Show should be execute in the last of program
+
+        - It should not be executed in middle if you do its in an interactive mode and it stops
+
+        - Displays the graphs and until you make the plots go away, it won't execute the next line
+
+    - *Matlab*: is a multi-paradigm numerical computing environment and fourth-generation programming language
+
+      - A proprietary programming language developed by MathWorks
+
+      - MATLAB allows matrix manipulations, plotting of functions and data, implementation of algorithms, creation of user interfaces
+
+      - It interfacing with programs written in other languages, including C, C++, C#, Java, Fortran and Python
+
+    - *NumPy*: is an extension to the Python, adding support for large, multi-dimensional arrays and matrices
+
+      - Along with a large library of high-level mathematical functions to operate on these arrays
+
+      - NumPy's main object is the homogeneous multidimensional array
+
+      - In Numpy dimensions are called axes
+
+    - *Arrays*: have different meaning for other languages but in NumPy an array is a matrix
