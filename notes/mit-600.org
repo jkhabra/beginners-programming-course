@@ -795,6 +795,32 @@ f(x) eO(n)**2 # n measure the size of x
      # global: 0
 
      #+END_SRC
- - *iter and next*: iter creates method that's going to give you a pointer to the place in the structure
+ - *biter and next*: iter creates method that's going to give you a pointer to the place in the structure
 
    -/ next/ literally goes along the structure giving you the next element
+
+* Lecture: 17
+
+- *Computational models*: is the use of computers to simulate and study the behavior of complex systems using mathematics, physics and computer science
+
+  - A computational model contains numerous variables that characterize the system being studied
+
+- /Start simple/ it means start with some simple approximation to the real problem
+
+  - Check that if it works, if it turns out not to be good enough model of the world
+
+  - Add some complications, but do not start with the complicated model
+
+- *Simulations*: is where we try and build the model the pretends it's the real world and simulates what goes on
+
+- *Random walk*: can be thought of as a random process in which a marker is randomly moved around some space
+
+  - That is, a space with a metric used to compute distance
+
+- *Pylab*:
+
+- *Default values* If call a method without that last arrangement rather than getting an error message
+
+  - It chooses the default value
+
+  - All built-in types have default values
