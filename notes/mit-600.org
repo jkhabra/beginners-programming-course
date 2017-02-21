@@ -922,3 +922,43 @@ f(x) eO(n)**2 # n measure the size of x
     - If you give it starting point, it will give tell you the consequences of that
 
     - We can use simulation to do optimization
+
+* Lecture: 20
+
+  - Classify Simulation models
+
+    - *Deterministic simulation*: is you should get the same result every time you run it
+
+    - *Stochastic simulation*: is where the answer will different run to run because there's an element of
+
+      of randomness in it
+
+  - *Static models*: in static simulation there is no issue with time
+
+  - *Dynamic models*: in dynamic situation time plays a role
+
+    - You gonna look at how things evolve over time
+
+    - *Queues network mode*: queues is a word for lines, evolve over time
+
+      - They are particularly for thing related to scheduling and planing
+
+  - *Discrete models*: are formulae are fit to discrete data—data that could potentially take on only a countable set of values,
+
+     such as the integers and which are not infinitely divisible
+
+  - *Continuous models*: are is the mathematical practice of applying a model to continuous data
+
+    - Data which has a potentially infinite number, and divisibility, of attributes
+
+  - *Monty carlo simulation*: is a computerized mathematical technique that allows people to account for risk in
+
+     quantitative analysis and decision making
+
+    - *Inferential Statics*: infers properties about a population: this includes testing hypotheses and deriving estimates
+
+      - The population is assumed to be larger than the observed data set
+
+      - In other words, the observed data is assumed to be sampled from a larger population
+
+    - *X range*: returns an iterator and only keeps one number in memory at a time
