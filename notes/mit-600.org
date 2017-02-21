@@ -962,3 +962,49 @@ f(x) eO(n)**2 # n measure the size of x
       - In other words, the observed data is assumed to be sampled from a larger population
 
     - *X range*: returns an iterator and only keeps one number in memory at a time
+
+* Lecture: 21
+
+  - If answer is statically valid, it does not mean it's the right answer
+
+  - Always check results against physical reality
+
+  - Data then Models that explain the data and then Consequences that follow from the models
+
+    - This is often the way science and engineering works
+
+  - *Spring Constants*: it tells us how stiff the spring is
+
+    - How much energy it takes to compress this spring
+
+    - Some springs are easy to stretch, they have a small spring constant
+
+    - Some springs are harder to stretch and compress such as suspension in automobile
+
+    - *Hookes's Law*: states that the force needed to compress or extend a spring is
+        directly proportional to the distance you stretch it
+
+      - As an equation, Hooke's law can be represented as F = kx, where F is the force we apply, k is the spring constant,
+        and x is the extension of the material
+
+  - *Objective function*: It will be to maximize or to minimize some numerical value
+
+    - This value may be the expected net present value of a project
+
+    - *Least Squares fit*: the method of least squares is a standard approach in regression analysis to the approximate solution of
+       overdetermined systems, i.e., sets of equations in which there are more equations than unknowns
+
+    - "Least squares" means that the overall solution minimizes the sum of the squares of the errors made in the results of every single equation
+
+    - *POlyfit*: it is built-in Pylab function
+
+      - That computes a least squares polynomial for a given set of data
+
+      - Polyfit actually generates the coefficients of the polynomial
+
+      - "Polyval" evaluates a polynomial for a given set of x values
+
+    - *Linear regression*: is an approach for modeling the relationship between a scalar dependent variable y and
+       one or more explanatory variables (or independent variables) denoted X
+
+      - The case of one explanatory variable is called simple linear regression
