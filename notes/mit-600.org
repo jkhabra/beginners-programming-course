@@ -795,7 +795,7 @@ f(x) eO(n)**2 # n measure the size of x
      # global: 0
 
      #+END_SRC
- - *biter and next*: iter creates method that's going to give you a pointer to the place in the structure
+ - *iter and next*: iter creates method that's going to give you a pointer to the place in the structure
 
    -/ next/ literally goes along the structure giving you the next element
 
@@ -874,3 +874,51 @@ f(x) eO(n)**2 # n measure the size of x
       - In Numpy dimensions are called axes
 
     - *Arrays*: have different meaning for other languages but in NumPy an array is a matrix
+
+* Lecture: 19
+
+  - *Biased random walks*: a biased random walk on a graph is a time path process in which an evolving variable jumps
+
+     from its current state to one of various potential new states
+
+    - Unlike in a pure random walk, the probabilities of the potential new states are unequal
+
+  - *Super*: Return a proxy object that delegates method calls to a parent or sibling class of type
+
+    - This is useful for accessing inherited methods that have been overridden in a class
+
+  - *Polymorphism*: is the provision of a single interface to entities of different types
+
+    - A polymorphic type is one whose operations can also be applied to values of some other type, or types
+
+    - There are several fundamentally different kinds of polymorphism
+
+  - Newer ignore the data, try and explain the data
+
+  - *First approximation*: When one is doing certain numerical computations, an approximate solution may be computed
+
+     by any of several heuristic methods, then refined to a final value
+
+    - By using the starting point of a first approximation of the answer, one can write an algorithm that converges more
+
+      quickly to the correct result
+
+  - *Data distributions* are used often in statistics
+
+    - It is a listing or showing all the possible values of the data and how often they occur
+
+    - When a distribution of categorical data is organized, you see the number or percentage of individuals in each group
+
+    - They are graphical methods of organizing and displaying useful information
+
+  - When we are simulating anything, is we are attempting to generate a sample of representative scenarios
+
+    - Because an exhaustive enumeration of all possible states would be impossible
+
+  - Simulations is an experimental device
+
+    - It does not give you the best possible solution
+
+    - If you give it starting point, it will give tell you the consequences of that
+
+    - We can use simulation to do optimization
