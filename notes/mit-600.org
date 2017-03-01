@@ -929,7 +929,7 @@ f(x) eO(n)**2 # n measure the size of x
 
     - *Deterministic simulation*: is you should get the same result every time you run it
 
-    - *Stochastic simulation*: is where the answer will different run to run because there's an element of
+    - *Stochastic simulation*: is where the answer will be different run to run because there's an element of
 
       of randomness in it
 
@@ -941,13 +941,13 @@ f(x) eO(n)**2 # n measure the size of x
 
     - *Queues network mode*: queues is a word for lines, evolve over time
 
-      - They are particularly for thing related to scheduling and planing
+      - They are particularly used for thing related to scheduling and planing
 
   - *Discrete models*: are formulae are fit to discrete data—data that could potentially take on only a countable set of values,
 
      such as the integers and which are not infinitely divisible
 
-  - *Continuous models*: are is the mathematical practice of applying a model to continuous data
+  - *Continuous models*: are the mathematical practice of applying a model to continuous data
 
     - Data which has a potentially infinite number, and divisibility, of attributes
 
@@ -961,11 +961,11 @@ f(x) eO(n)**2 # n measure the size of x
 
       - In other words, the observed data is assumed to be sampled from a larger population
 
-    - *X range*: returns an iterator and only keeps one number in memory at a time
+    - *xrange*: returns an iterator and only keeps one number in memory at a time
 
 * Lecture: 21
 
-  - If answer is statically valid, it does not mean it's the right answer
+  - If answer is statistically valid, it does not mean it's the right answer
 
   - Always check results against physical reality
 
@@ -1008,3 +1008,36 @@ f(x) eO(n)**2 # n measure the size of x
        one or more explanatory variables (or independent variables) denoted X
 
       - The case of one explanatory variable is called simple linear regression
+
+* Lecture: 22
+ - *Normal Distribution or Gaussian*: in probability theory, the normal (or Gaussian) distribution is a very common continuous probability distribution
+
+   - Normal distributions are important in statistics and are often used in the natural and social sciences to represent real-valued random variables whose distributions are not known
+
+   - The normal distribution can be described, with two numbers the mean and the standard deviation
+
+   - /Standard deviation/ is a measure of statistical dispersion
+
+     - It tells us how widely spread the point of the data set are
+
+ - *Stable distribution* As you change the  shape does not change that's what called a stable distribution
+
+ - All distributions are symmetric
+
+ - *Uniform distribution*: In a uniform distribution each value in the range is equally like
+
+   - It means the result is most unpredictable it could be anything
+
+ - *Exponential distribution*: is things fall off much more steeply around the mean than with the normal distribution
+
+   - Requests for web pages are often exponentially
+
+   - The exponential is very predictable, most of answers are right around the mean
+
+ - *Pareto distribution*: is a power law probability distribution that is used in description of social, scientific, geophysical, actuarial, and many other types of observable phenomena
+
+ - *Lurking variable*: is a variable that is not included as an explanatory or response variable in the analysis
+
+   - But can affect the interpretation of relationships between variables
+
+   - A lurking variable can falsely identify a strong relationship between variables or it can hide the true relationship
