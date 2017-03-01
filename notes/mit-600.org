@@ -1041,3 +1041,17 @@ f(x) eO(n)**2 # n measure the size of x
    - But can affect the interpretation of relationships between variables
 
    - A lurking variable can falsely identify a strong relationship between variables or it can hide the true relationship
+* Lecture: 23
+ - *Indexed portfolio*: a portfolio of shares in all the companies which form the basis of a stock exchange index
+
+ - *Managed portfolio*: means that your money is being handled by a professional money manager, CD-managers or a team of managers
+
+   - Who are making decisions on what investments to buy, hold and sell
+
+ - *The efficient hypothesis*: is an investment theory that states it is impossible to "beat the market"
+
+   - Because stock market efficiency causes existing share prices to always incorporate and reflect all relevant information
+
+ - *Multiplicative*: is change is proportional to the current size, whether its price or anything else
+
+ - *Additive*: If the change is independent of the current value
