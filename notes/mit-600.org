@@ -1055,3 +1055,48 @@ f(x) eO(n)**2 # n measure the size of x
  - *Multiplicative*: is change is proportional to the current size, whether its price or anything else
 
  - *Additive*: If the change is independent of the current value
+* Lecture: 24
+  - *Computational thinking*: is the thought processes involved in formulating a problem
+     and expressing its solution in such a way that a computer—human or machine can effectively carry out
+
+  - *Computational Thinking Process*: Identify or invert useful abstraction
+
+    - Formulate solution to a problem as a computational experimental
+
+    - Design and construct a sufficiently efficient implementation of experiment
+
+    - Validate experiment setup
+
+    - Run experiment
+
+    - Evaluate results of experiment
+
+    - Repeat as needed
+
+  - *The two A's of computational thinking*
+
+    - /Abstraction/ is a technique for arranging complexity of computer systems
+
+    - Choosing the right abstraction
+
+    - Operating in terms of multiple layers of abstraction simultaneously
+
+    - Defining the relationships the between layers
+
+    - /Automation/
+
+    - Think in terms of mechanizing our abstractions
+
+  - *Examples of computational thinking*:
+
+    - /How difficult is the problem and how best can i solve it?
+
+      - /Thinking recursively/
+
+      - Reformulating a seemingly difficult problem into one which we know how to solve
+
+      - Use reduction means reduce the problem
+
+      - transformations means transforming one problem into another and simulate
+
+      - Choosing an appropriate representation or modeling the relevant aspects of a problem to make it tractable
