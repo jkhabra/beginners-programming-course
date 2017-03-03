@@ -1,0 +1,442 @@
+* JavaScript
+** Introduction
+
+- JavaScript was created in 1995 by Brendan Eich while he was an engineer at Netscape
+
+- JavaScript was first released with Netscape early in 1996
+
+- It was originally going to be called LiveScript, but it was renamed in an ill-fated marketing decision
+
+  - That attempted to capitalize on the popularity of Sun Microsystem's Java language — despite the two having very little in common
+
+  - This has been a source of confusion ever since
+
+- JavaScript is used by an incredible number of high-profile applications
+
+  - Showing that deeper knowledge of this technology is an important skill for any web or mobile developer
+
+- JavaScript language has no concept of input or output
+
+  - It is designed to run as a scripting language in a host environment
+
+  - It is up to the host environment to provide mechanisms for communicating with the outside world
+
+  - The most common host environment is the browser
+
+  - But JavaScript interpreters can also be found in a huge list of other places, including Adobe Acrobat,
+    Adobe Photoshop, SVG images, Yahoo's Widget engine, server-side environments such as Node.js
+
+** Overview
+- JavaScript is a multi-paradigm, dynamic language with types and operators, standard built-in objects and methods
+
+- Its syntax is based on C and Java languages
+
+- JavaScript supports objects-oriented programming with object prototype, instead of classes
+
+- It also supports functional programming
+
+  - functions the capacity to hold executable code and be passed around like any other object
+
+*** JavaScript's types:
+
+  - Number
+
+  - String
+
+  - Boolean
+
+  - Symbol
+
+  - Objects
+
+    - Functions
+
+    - Arrays
+
+    - Date
+
+    - RegExp
+
+  - null
+
+  - undefined
+
+  - There are some built-in Error types as well
+
+** Numbers
+- Numbers in javaScript are "double-precision 64-bit format IEEE 754 values"
+
+- There is no such thing as integer in javaScript
+
+  - So be careful when use math
+
+- The standard arithmetic operations are supported
+
+- There are also built-in objects such as Math that provides advanced mathematical functions
+  e.g
+
+  #+BEGIN_SRC javascript
+  Math.sin(3.5)
+  var circumference = Math.PI * (r + r);
+  #+END_SRC
+
+- String can be convert into integer using built-in parseInt() function and binary nums as well
+
+  - This takes the base for the conversion as an optional second argument
+
+- Convert floating point numbers using parseFloat() function
+
+- NaN (short for "Not a Number") is returned if the string is non-numeric
+  e.g
+
+  #+BEGIN_SRC javascript
+  parseInt('123', 10); // 123
+  parseInt('11', 2); // 3
+  parseFloat('hello', 10); //NaN
+  #+END_SRC
+
+- String can be convert with the use of unary + operator
+  e.g
+  #+BEGIN_SRC javascript
+  + '42';   // 42
+  + '010';  // 10
+  + '0x10'; // 16
+  #+END_SRC
+
+- NaN is toxic: if you provide it as an input to any mathematical operation the result will also be NaN
+
+- Test NaN using the built-in isNaN() function
+
+- JavaScript also has the special values Infinity and -Infinity
+
+- Test Infinity, -Infinity and NaN values using the built-in isFinite() function
+  e.g
+
+  #+BEGIN_SRC javascript
+  isFinite(1 / 0); // false
+  isFinite(-Infinity); // false
+  isFinite(NaN); // false
+  #+END_SRC
+
+** Strings
+- Strings in javaScript are sequence of Unicode characters
+
+- They are sequences of UTF-16 code units; each code unit is represented by a 16-bit number
+
+- Each Unicode character is represented by either 1 or 2 code units.
+
+- You can use strings like objects
+
+  - They have methods as well that allow you to manipulate the string and access information about the string
+    e.g
+
+    #+BEGIN_SRC javaScript
+    'hello'.charAt(0); // "h"
+    'hello, world'.replace('hello', 'goodbye'); // "goodbye, world"
+    'hello'.toUpperCase(); // "HELLO"
+    #+END_SRC
+
+** Variables
+- New variables in javaScript are declared using one of three keywords: let, const and var
+
+- *let*: allows to declare block-level variables
+
+  - let variables are available from the function block it is enclosed in
+
+- *const*: it allows to declare variables whose values are never intended to change
+
+  - The variable is available from the function block it is declares in
+
+- *var*: is the most common declarative keyword
+
+  - It does not have the restriction that the other two keywords have
+
+  - A variable is available from the function block it is declared in
+
+- If you declare a variable without assigning any value to it, its type is undefined
+
+** Objects
+- javaScript objects can be thought of as simple collection of name-value pair
+
+  - They are similar to Dictionaries in Python and Hashes in Perl and Ruby
+
+  - The "name" part is a JavaScript string, while the value can be any JavaScript value — including more objects
+    e.g
+    #+BEGIN_SRC javaScript
+    var obj = new Object();
+    var obj = {};
+    #+END_SRC
+
+  - These are semantically equivalent; object literal syntax, and is more convenient
+
+    - This syntax is also the core of JSON format and should be preferred at all times
+      e.g
+      #+BEGIN_SRC javaScript
+      var obj = {
+      name: 'Carrot',
+      'for': 'Max',
+      details: {
+      color: 'orange',
+      size: 12
+      }
+      }
+      #+END_SRC
+
+    - Once created, an object's properties can again be accessed
+
+** Arrays
+ - Arrays in javaScript are actually a special type object
+
+ - They work same as other objects but it has magic property /length/
+
+ - A more convenient notation is to use an array literal
+
+ - If you want to append an item to an array then use /push(item);/
+
+** Functions
+- The most basic function in javaScript
+  e.g
+  #+BEGIN_SRC javascript
+  function avgArray(arr) {
+    var sum = 0;
+    for (var i = 0, j = arr.length; i < j; i++) {
+    sum += arr[i];
+  }
+  return sum / arr.length;
+  };
+
+  avgArray([2, 3, 4, 5]); // 3.5
+  #+END_SRC
+
+- A javaScript function can take 0 or more named parameters
+
+- JavaScript lets you call a function and call it with an arbitrary array of arguments, using the apply() method of any function object
+
+- JavaScript lets you create anonymous functions
+  e.g
+  #+BEGIN_SRC javaScript
+  var avg = function() {
+  var sum = 0;
+  for (var i = 0, j = arguments.length; i < j; i++) {
+    sum += arguments[i];
+  }
+  return sum / arguments.length;
+};
+  #+END_SRC
+
+  - It's extremely powerful, as it lets you put a full function definition anywhere that you would normally put an expression
+
+** Custom objects
+- javaScript is a prototype-based language that contains no class statement
+
+- javaScript uses function as classes
+  e.g
+  #+BEGIN_SRC javascript
+  function makePerson(first, last) {
+  return {
+    first: first,
+    last: last,
+    fullName: function() {
+      return this.first + ' ' + this.last;
+    },
+    fullNameReversed: function() {
+      return this.last + ', ' + this.first;
+    }
+  };
+}
+
+s = makePerson('Simon', 'Willison');
+s.fullName(); // "Simon Willison"
+s.fullNameReversed(); // "Willison, Simon"
+  #+END_SRC
+
+- *this*: refers to the current object
+
+  - If you called function using dot notation or bracket notation on a object that object become /this/
+
+  - If dot notation wasn't used for the call, this refers to the global object
+
+- *new*: new is strongly related to this
+
+  - It creates a brand new empty object, and then calls the function specified, with this set to that new object
+
+  - Functions that are designed to be called by new are called constructor functions
+
+  - Common practice is to capitalize these functions as a reminder to call them with new
+
+** Selecting Dom elements
+- There are couple of ways to manipulate HTML elements
+
+  - Finding HTML elements by id
+    e.g
+    #+BEGIN_SRC javascript
+    var x = document.getElementById("intro");
+    #+END_SRC
+
+  - Finding HTML elements by tag name
+    e.g
+    #+BEGIN_SRC javascript
+    var x = document.getElementsByTagName("p");
+    #+END_SRC
+
+    - This example finds the element with id="main", and then finds all <p> elements inside "main"
+
+  - Finding HTML elements by class name
+
+    - If you want to find all HTML elements with the same class name, use getElementsByClassName()
+
+    - This returns a list of all elements with class="intro"
+      e.g
+      #+BEGIN_SRC javascript
+      var x = document.getElementsByClassName("intro");
+      #+END_SRC
+
+  - Finding HTML elements by CSS selectors
+
+    - If you want to find all HTML elements that matches a specified CSS selector (id, class names, types, attributes, values of attributes, etc)
+
+    - Then use the querySelectorAll() method
+
+    - This example returns a list of all <p> elements with class="intro"
+      e.g
+      #+BEGIN_SRC javascript
+      var x = document.querySelectorAll("p.intro");
+      #+END_SRC
+
+  - Finding HTML elements by HTML object collections
+
+    - It finds the form element with id="frm1", in the forms collection, and displays all element values
+      e.g
+      #+BEGIN_SRC javascript
+      var x = document.forms["frm1"];
+      var text = "";
+      var i;
+      for (i = 0; i < x.length; i++) {
+          text += x.elements[i].value + "<br>";
+        }
+        document.getElementById("demo").innerHTML = text;
+      #+END_SRC
+
+** Array operations
+
+ - *array.filter(fn: function)*
+
+   - It creates a new array with all of the elements of this array for which the provided filtering function returns true
+   - Syntax
+     #+BEGIN_SRC js
+     array.filter(fn: function)
+     #+END_SRC
+     - ~fn~ is a function which gets =(item, index, array)= as arguments
+     - ~fn~ must return a =Boolean=
+     - if ~fn~ returns =true= for an item, that item is kept in new array, otherwise it is removed
+
+ - f*array.forEach(fn)*
+   - It calls a function for each element in the array
+   - Syntax
+     #+BEGIN_SRC javascript
+     array.forEach(fn : function);
+     #+END_SRC
+     - ~fn~ is a function which gets: =(item, index)= as arguments
+     - Return value of ~fn~ is ignored
+   - It do not return anything. =array.forEach= is meant for side-effects only
+
+ - *map(fn)*
+
+   - It creates a new array with the results of calling a provided function on every element in this array
+
+   - fn function is executed for each item in array. Whatever fn will return, will be used to create new array
+
+     #+BEGIN_SRC javascript
+     fn (item: <array item>, index: number, array: <original array>)
+     #+END_SRC
+
+ - *reduce()*
+
+   - Apply a function simultaneously against two values of the array (from left-to-right) as to reduce it to a single value
+
+** Events
+- What is an event?
+  - JavaScript's interaction with HTML is handled through events that occur when the user or the browser manipulates a page
+  - When the page loads, it is emit an event. When the user clicks a button, that click too is an event
+  - Other examples include events like pressing any key, closing a window, resizing a window, etc
+  - Events are a part of the Document Object Model (DOM) Level 3
+  - Every HTML element contains a set of events which can trigger JavaScript Code
+
+- What is an event listener?
+  - EventListener is an object that handles an event
+  - It can be passed to addEventListener() instead of passing a Function
+  - Any JavaScript object with a handleEvent method can be used as an EventListener
+  - The following are common events:
+    - /onload/: when the page loads
+    - /onclick/: when a user clicks something
+    - /onmouseover/: when a user mouses over something
+    - /onfocus/: when a user puts the cursor in a form field
+    - /onblur/: When a user leaves a form field
+
+*** Example Events
+
+- *Click*
+  - The onclick event is fired when a pointing device button (usually a mouse button) is pressed and released on a single element
+  - It can only be added to visible elements on the page such as <a>, form buttons, check boxes, a DIV etc
+    e.g
+    #+BEGIN_SRC javascript
+    <script>
+    function inform(){
+    alert("You have activated me by clicking the grey button! Note that the event handler is added within the event that it handles"}
+    </script>
+
+    <form>
+    <input type="button" name="test" value="Click me" onclick="inform()">
+    </form>
+    #+END_SRC
+
+- *Mouse Enter*
+  - The mouseenter event is fired when a pointing device (usually a mouse) is moved over the element that has the listener attached
+  - Similar to mouseover, it differs in that it doesn't bubble
+  - That it isn't sent when the pointer is moved from one of its descendants' physical space to its own physical space
+  - One mouseenter event is sent to each element of the hierarchy when entering them
+  - One single mouseover event is sent to the deepest element of the DOM tree, then it bubbles up the hierarchy until it is canceled by a handler or reaches the root
+
+- *Mouse Leave*
+  - The mouseleave event is fired when a pointing device (usually a mouse) is moved off the element that has the listener attached
+  - Similar to mouseout, it differs in that it doesn't bubble
+  - That it isn't sent until the pointer has moved from its physical space and the one of all its descendants
+  - One single mouseout event is sent to the deepest element of the DOM tree, then it bubbles up the hierarchy until it is canceled by a handler or reaches the root
+
+*** Adding/Removing event listeners
+
+**** element.addEventListener (event: string, fn: function)
+
+- Add an event listener that fires when given event is emitted
+- *Syntax*:
+  #+BEGIN_SRC javascript
+  element.addEventListener(event, function, useCapture);
+  #+END_SRC
+  - The first parameter is the type of the event as a *string* (like "click" or "mousedown")
+  - The second parameter is the *function* we want to call when the event occurs
+  - The third parameter is a *boolean* value specifying whether to use event bubbling or event capturing
+    - This parameter is optional
+
+- You can add many event handlers to one element
+- The addEventListener() method attaches an event handler to the specified element
+- This method attaches an event handler to an element without overwriting existing event handlers
+- We can add many event handlers of the same type to one element, i.e two "click" events
+- We can add event listeners to any DOM object not only HTML elements. i.e the window object
+- The addEventListener() method makes it easier to control how the event reacts to bubbling
+- We can easily remove an event listener by using the removeEventListener() method
+
+**** element.removeEventListener
+- The EventTarget.removeEventListener() method removes the event listener previously registered with EventTarget.addEventListener()
+- *Syntax*
+  e.g
+  #+BEGIN_SRC javascript
+  target.removeEventListener(type, listener[, options]);
+  target.removeEventListener(type, listener[, useCapture]);
+  #+END_SRC
+  - A string representing the event type to remove
+  - The EventListener function to remove from the event target
+  - An options object that specifies characteristics about the event listener
+    - /capture/: A Boolean that indicates that events of this type will be dispatched to the registered listener
+      before being dispatched to any EventTarget beneath it in the DOM tree
+    - /passive/: A Boolean indicating that the listener will never call preventDefault()
+      - If it does, the user agent should ignore it and generate a console warning
