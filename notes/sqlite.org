@@ -1,0 +1,273 @@
+* What is SQL
+ - SQL stands for structured query language
+ - It used to communicate with database
+ - SQL statements used to perform tasks such as update data on a database or retrieve data from database
+ - The standard SQL commands are `Insert`, `Update`, `Delete`, `Create` and `Drop`
+ - Some of the SQL databases are MySQL, Oracle, Microsoft SQL Server, IBM DB2, etc
+* What is SQLite
+ - SQLite is a relational database management system contained in a C programming library
+ - SQLite is an embedded SQL database engine
+ - Unlike most other SQL databases, SQLite does not have a separate server process
+ - SQLite reads and writes directly to ordinary disk files
+ - SQLite supports many features of SQL and has high performance and does not support stored procedures
+ - It is used by several widespread browsers, operating systems, and embedded systems (such as mobile phones)
+* How to create new sqlite3 db
+ - To connect to the database, we can use ~sqlite3.connect~ function by passing the name of a file to open or create it
+ - When we are done working with database then we need to close the connection
+   e.g
+   #+BEGIN_SRC python
+   #!/usr/bin/python
+   import sqlite3
+   db = sqlite3.connect('test.db')
+   print 'opened database successfully'
+   db.close()
+   #+END_SRC
+ - With ~:memory:~ argument we can create temporary DB in RAM
+   e.g
+   #+BEGIN_SRC python
+   import sqlite3
+   db = sqlite3.connect(':memory:')
+   db.close()
+   #+END_SRC
+ - Creating sqlite3 DB outside of python shell
+   e.g
+   #+BEGIN_EXAMPLE
+   sqlite3 test.db
+   SQLite version 3.8.10.2 2015-05-20 18:17:19
+   Enter ".help" for usage hints.
+   sqlite> .exit
+   #+END_EXAMPLE
+   - ~.exit~ command terminates the interactive session of the sqlite3 command line tool
+* How to create new SQLite3 table
+ - To use the database, we need to get a cursor object
+ - Pass the SQL statements to the cursor object to execute them, we should commit the changes
+   e.g
+   #+BEGIN_SRC python
+   import sqlite3
+   db = sqlite3.connect('test.db')
+   cursor = db.cursor()
+   cursor.execute('''CREATE TABLE books(id INTEGER PRIMARY KEY, title TEXT, price TEXt) ''')
+   db.commit()
+   db.close()
+   #+END_SRC
+* Field data types in SQLite3
+ - SQLite3 uses static, rigid typing
+ - With static typing, the datatype of a value is determined by its container
+   - The particular column in which the value is stored
+** Storage Classes and Data types
+- *Null*: The value is a Null value
+- *Integer*: The value is single integer
+- *Real*: The value is a floating point value, stored as an 8-byte IEEE floating point number
+- *Text*: The value is a text string, stored using the database encoding
+- *Blob*: The value is a blob of data, stored exactly as it was input
+** SQLite Affinity Type
+- Sqlite3 supports the concept of type affinity on columns
+- Any column can still store any type of data
+  - The preferred storage class for column is called its affinity
+- *Text*: This column stores all data using storage classes NULL, TEXT or BLOB
+- *Numeric*: This column may contain values using all five storage classes
+- *Integer*: It behaves the same as a column with NUMERIC affinity with an exception in a CAST expression
+- *Real*: It behaves like a column with NUMERIC affinity except
+  - It forces integer values into floating point representation
+- *None*: A column with affinity NONE does not prefer one storage class over another
+  - No attempt is made to coerce data from one storage class into another
+
+
+* Queries
+** Insert
+- To insert data we use cursor to execute the query
+  e.g
+  #+BEGIN_SRC python
+  import sqlite3
+  db = sqlite3.connect('data/test.db')
+  cursor = db.cursor()
+  title1 = 'Learning Python'
+  author1 = 'Mark Lutz'
+  price1 = '$36.19'
+  year1 ='Jul 6, 2013'
+  title2 = 'Two Scoops of Django: Best Practices For Django 1.6'
+  author2 = 'Daniel Greenfeld'
+  price2 = '$34.68'
+  year2 = 'Feb 1, 2014'
+
+  cursor.execute('''INSERT INTO books(title, author, price, year)
+                  VALUES(?,?,?,?)''', (title1, author1, price1, year1))
+
+  cursor.execute('''INSERT INTO books(title, author, price, year)
+                VALUES(?,?,?,?)''', (title2, author2, price2, year2))
+
+  db.commit()
+  db.close()
+  #+END_SRC
+** Select
+- We can use the SELECT statement to retrieve specific columns
+- The column names follow the SELECT word
+  e.g
+  #+BEGIN_SRC sqlite
+  SELECT * FROM books; # this prints whole table
+  SELECT title, price FROM books; # it prints only price and title
+  #+END_SRC
+- We can rename the column names of the returned result
+  #+BEGIN_SRC sqlite
+  SELECT title, price AS 'Price of book' form books;
+  #+END_SRC
+- We can use the ~LIMIT~ clause to limit the data amount returned by the statement
+  #+BEGIN_SRC sqlite
+  SELECT * FROM books LIMIT 4;
+  SELECT * FROM books LIMIT 2, 4; # this statement select four rows skipping the first two
+  #+END_SRC
+** Update
+- An UPDATE statement is used to modify a subset of the values stored in zero or more rows of the database table
+  - Identified by the qualified-table-name specified as part of the UPDATE statement
+- If the UPDATE statement does not have a WHERE clause, all rows in the table are modified by the UPDATE
+- Otherwise, the UPDATE affects only those rows for which the WHERE clause
+  #+BEGIN_SRC python
+  import sqlite3
+
+  conn = sqlite3.connect('test.db')
+  print "Opened database successfully";
+
+  conn.execute("UPDATE books set price = 25000.00 Where id=1")
+  conn.commit
+  print "Total number of rows updated :", conn.total_changes
+
+  cursor = conn.execute("SELECT * from books")
+  conn.close()
+  #+END_SRC
+** DELETE
+- The DELETE command removes records from the table identified by the qualified-table-name
+- If the WHERE clause is not present, all records in the table are deleted
+  #+BEGIN_SRC python
+  import sqlite3
+
+  conn = sqlite3.connect('test.db')
+  print "Opened database successfully";
+
+  conn.execute("DELETE FROM books WHERE id=2;")
+  conn.commit
+  print "Total number of rows deleted :", conn.total_changes
+  conn.close()
+  #+END_SRC
+** Where
+- The sqlite3 WHERE clause is used to filter the results form a ~SELECT~, ~INSERT~, ~UPDATE~ and ~DELETE~
+  e.g
+  #+BEGIN_SRC sqlite
+  SELECT * FROM books WHERE price = '$30.90';
+  SELECT * FROM employees WHERE (last_name = 'Smith' AND first_name = 'Jane')
+  OR (employees_id = 1);
+  #+END_SRC
+** Order by
+- SQLite3 table stores rows in an unspecified order
+- To sort result set we use ~Oder by~
+- The ~ASC~ keyword sorts the data in ascending order, the ~DESC~ in descending order
+  e.g
+  #+BEGIN_SRC sqlite
+  SELECT * FROM cars ORDER BY price; # the default sorting is ascending order
+  SELECT name, price FROM cars ORDER by price DESC;
+  #+END_SRC
+
+** Distinct
+ - The ~DISTINCT~ clause is used to select only unique items form the result set
+   #+BEGIN_SRC sqlite
+   SELECT DISTINCT customer FROM oders WHERE customer LIKE 'B%';
+   # It will remove duplicate items
+   #+END_SRC
+
+** Group by
+ - The ~GROUP BY~ clause is used to combine database records with identical values into a single record
+ - It is often used with the aggregate functions
+ - For each group, we can apply an aggregate function such as MIN, MAX, SUM, COUNT, or AVG
+   e.g
+   #+BEGIN_SRC sqlite
+   SELECT sum(orderPrice) AS Total, customer FROM orders GROUP BY customer;
+   # its output looks like that
+   Total       Customer
+   ----------  ----------
+   440         Black
+   860         Brown
+   340         Robertson
+   2040        Smith
+   1250        Williamson
+
+   #+END_SRC
+ - We cannot use the WHERE clause when aggregate functions are used
+ - We use the HAVING clause instead
+   #+BEGIN_SRC sqlite
+   SELECT sum(orderPrice) AS Total, customer FROM orders GROUP BY customer HAVING sum(orderPrice)>1000;
+   # its output look like that
+   Total       Customer
+   ----------  ----------
+   2040        Smith
+   1250        Williamson
+   #+END_SRC
+
+** Having
+ - SQLite ~HAVING~ clause is an optional clause of the ~SELECT~ statement
+ - The HAVING clause specifies a search condition for a group
+ - We often use HAVING clause with the ~GROUP BY~ clause
+ - If we use HAVING clause without the GROUP BY clause, it behaves like a ~WHERE~ clause
+ - The HAVING is applied after GROUP BY, while the WHERE is applied before
+
+** Like
+ - ~LIKE~ condition allows wildcards to be used in the WHERE clause of a SELECT, INSERT, UPDATE or DELETE
+ - This allows us to perform pattern matching
+ - Syntax: expression LIKE pattern
+   - /expression/: A character expression such as a column or field
+   - /pattern/: A character expression that contains pattern matching
+     - *%*: Allows us to match any string of any length
+     - *-*: Allows us to match on a single character
+ - e.g
+#+BEGIN_SRC sqlite
+SELECT *
+FROM employees
+WHERE last_name LIKE '%e%';
+#+END_SRC
+
+** In
+- The ~IN~ condition is used to help reduce the need to use multiple ~OR~ conditions
+- Syntax: expression IN(value, value2,..........value_n);
+- The In condition is also called the SQLite IN operator
+  e.g
+  #+BEGIN_SRC sqlite
+  SELECT * FROM employees WHERE first_name IN ('john', 'Jane', 'Heather');
+  #+END_SRC
+- It would return all rows form the employees table where the first_name is either john, Heather or Jane
+- Because the * used in the SELECT, all field would appears in the result set
+
+** NOT
+ - The SQLite NOT Condition (also called the NOT Operator)
+   is used to negate a condition in a SELECT, INSERT, UPDATE, or DELETE statement
+ - Syntax: NOT condition
+   #+BEGIN_SRC sqlite
+   SELECT *
+   FROM employees
+   WHERE department IS NOT NULL;
+   # it would return all records from the employees
+     table where the department does not contain a NULL value
+   #+END_SRC
+
+** AND OR
+- The SQLite AND condition and OR condition can be combined in a
+  SELECT, INSERT, UPDATE, or DELETE statement
+- When combining these conditions, it is important to use parentheses
+- So that the database knows what order to evaluate each condition
+- Syntax
+  #+BEGIN_SRC sqlite
+  WHERE condition1 AND condition2 OR condition_n;
+  #+END_SRC
+** Explain
+ - It used for describing the details of table
+
+* Field constraints
+ - Constraints are the rules enforced on data columns on table
+ - These are used to limit the type of data that can go into a table
+ - This ensures the accuracy and reliability of the data in the database
+ - Constraints could be column level or table level
+ - Column level are applied only to one column
+   but table level constraints are applied to the whole table
+ - Commonly used constraints are:
+   - *NOT NULL Constraints* : Ensures that a column cannot have NULL value
+   - *DEFAULT*: Provides a default value for a column when none is specified
+   - *UNIQUE*: Ensures that all values in a column are different
+   - *PRIMARY KEY*: Uniquely identified each rows/records in a database table
+   - *CHECK*: The CHECK constraint ensures that all values in a column satisfy certain conditions
